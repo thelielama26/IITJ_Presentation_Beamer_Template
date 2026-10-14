@@ -1,0 +1,187 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% Template Author: Hemant N                         %
+% Roll Number: P26AI####                            %
+% IITJ Beamer Template                              %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\documentclass[hyperref={bookmarks=false},aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+
+%-------------------------Packages------------------------
+\usepackage{subcaption}
+\usepackage{amsmath}
+%---------------------------------------------------------
+% -----------Define theme and color scheme----------------
+
+\usetheme[sidebarleft]{IITJ}  % 3 options: minimal, sidebarleft, sidebarright
+
+% ---------Information on the title page------------------
+\title[Short Title]
+{\bfseries{Long Long Long Title}}
+
+\subtitle{Subtitle}
+
+\author[John \& James]
+{John Doe\inst{1} \and James Cook\inst{2}}
+
+\institute[IITJ]
+{
+  \inst{1}
+  Department Name\\
+  Indian Institute of Technology Jodhpur\\
+  \vspace{0.5cm}
+  \inst{2}
+  Department Name\\
+  Indian Institute of Technology Jodhpur
+}
+
+\date[Oct, 2026]{\today}
+%------------------------------------------------------------
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the beginning of each section and highlights the current section:
+
+% \AtBeginSection[]
+% {
+%   \begin{frame}
+%     \frametitle{Table of Contents}
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
+%------------------------------------------------------------
+
+\begin{document}
+
+\frame{\titlepage}  % Creates title page
+
+%--------table of contents after title page---------------
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+%---------------------------------------------------------
+
+\section{Working with Texts}
+
+%---------------------------------------------------------
+%Changing visibility of the text
+\begin{frame}
+\frametitle{Making Lists}
+Some itemized text...
+
+\begin{itemize}
+    \item<1-> First line comes first. 
+    \item<2-> Second line joins the first in the next slide.
+    \item<3-> Third line joins the rest in the next slide.
+\end{itemize}
+
+\end{frame}
+
+%---------------------------------------------------------
+
+%---------------------------------------------------------
+%Highlighting text
+\begin{frame}
+  \frametitle{Types of Blocks}
+  
+  This is a brief introduction of \alert{Blocks}.
+  
+  \begin{block}{Definition}
+  A simple definition block.
+  \end{block}
+  
+  \begin{alertblock}{Alert}
+  A simple alert block.
+  \end{alertblock}
+  
+  \begin{examples}
+  A simple example block.
+  \end{examples}
+\end{frame}
+%---------------------------------------------------------
+
+\section{Two Columns and Equations}
+
+%---------------------------------------------------------
+%Two columns
+\begin{frame}
+\frametitle{Two Columns with Footnote and Image}
+
+\begin{columns}
+
+\column{0.5\textwidth}
+Indian Institute of Technology Jodhpur (IITJ) is a public technical university located in Jodhpur, Rajasthan, India. Established in 2008, it is recognized as an Institute of National Importance \footnotemark[1].
+
+\column{0.5\textwidth}
+\begin{figure}
+  \includegraphics[width=0.8\textwidth]{figures/iitj_logo.png}
+  \caption{IIT Jodhpur Logo}
+  \label{fig:iitjlogo}
+\end{figure}
+\end{columns}
+\footnotetext[1]{https://iitj.ac.in/}
+\end{frame}
+%---------------------------------------------------------
+
+%---------------------------------------------------------
+%Equations
+\begin{frame}
+  \frametitle{Frame with a sample equation}
+  This slide is to test mathematical formulas \pause
+  \begin{equation}
+    \begin{gathered}
+        \nabla \cdot \vec{u}\, = \,0,\\
+        \rho\left(\frac{\partial\vec{u}}{\partial t} \,+\,\vec{u} \cdot \nabla \vec{u}\right)\, =\, -\, \nabla P\, + \,\mu \,\nabla^2 \vec{u}\, +\, \rho\vec{f}
+    \end{gathered}
+  \end{equation}
+\end{frame}
+%---------------------------------------------------------
+
+\section{Subfigures and Tables}
+
+%---------------------------------------------------------
+%Subfigures
+\begin{frame}
+  \frametitle{Use of Subfigures}
+  \begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.35\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{figures/iitj_logo.png}
+      \caption{1st Image}
+      \label{fig:img1}
+    \end{subfigure}
+    \hspace{0.3cm}
+    \begin{subfigure}[b]{0.35\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{figures/iitj_logo.png}
+      \caption{2nd Image}
+      \label{fig:img2}
+    \end{subfigure}
+  \end{figure}
+\end{frame}
+%---------------------------------------------------------
+
+%---------------------------------------------------------
+%Tables
+\begin{frame}
+  \frametitle{Use of Tables}
+  \begin{table}
+    \centering
+    \begin{tabular}{||c|c|c||}
+      \hline
+      \textbf{Heading 1} & \textbf{Heading 2} & \textbf{Heading 3}\\
+      \hline
+      Text & Text & Text \\
+      \hline
+      Text & Text & Text \\
+      \hline
+      Text & Text & Text \\
+      \hline
+    \end{tabular}
+    \caption{Sample Table}
+
+  \end{table}
+\end{frame}
+%---------------------------------------------------------
+\end{document}

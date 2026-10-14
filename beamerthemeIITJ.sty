@@ -1,0 +1,88 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% Template Author: Hemant N                         %
+% Roll Number: P26AI####                            %
+% IITJ Beamer Template                              %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\ProvidesPackage{beamerthemeIITJ}
+
+\mode<presentation>
+
+% --------  Invoke Color Theme  ------------
+\usecolortheme{IITJ}
+\useinnertheme{circles}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{footnote}{size=\tiny}
+
+% --------  Define behavior for theme option "minimal"  -----------
+\DeclareOptionBeamer{minimal}{
+    \setbeamertemplate{frametitle}
+    {
+        \nointerlineskip
+        \begin{beamercolorbox}[sep=0.3cm,ht=40pt,wd=\paperwidth]{frametitle}
+            \vbox{}\vskip-2ex%
+            \strut\insertframetitle\strut
+            \vskip-0.8ex%
+        \end{beamercolorbox}
+    }
+    \logo{\includegraphics[width=1.5cm]{./figures/iitj_logo.png}}
+}
+
+% Define sidebar dimensions
+\newlength{\sidebarwidth}
+\setlength{\sidebarwidth}{50pt} 
+
+\newlength{\sidebarHeight}
+\setlength{\sidebarHeight}{\dimexpr\paperheight - 1ex} 
+
+\newlength{\mainfooterwidth}
+\setlength{\mainfooterwidth}{\dimexpr\paperwidth - \sidebarwidth}
+
+% --------  Define behavior for theme option "sidebarleft"  ----------- 
+\DeclareOptionBeamer{sidebarleft}{
+    \useoutertheme[width=\sidebarwidth,left]{sidebar}
+    \logo{\includegraphics[width=1.25cm]{./figures/iitj_logo.png}}
+    \setbeamertemplate{sidebar left}{
+        \vbox{
+            \vspace{5pt}
+            \hspace{2pt}
+            \beamer@currentsubsection=0
+            \insertverticalnavigation{\the\sidebarHeight}
+            \vfill
+        }
+    }
+}
+
+% --------  Define behavior for theme option "sidebarright"  ----------- 
+\DeclareOptionBeamer{sidebarright}{
+    \useoutertheme[width=\sidebarwidth,right]{sidebar}
+    \logo{\includegraphics[width=1.25cm]{./figures/iitj_logo.png}}
+    \setbeamertemplate{sidebar right}{
+        \vbox{
+            \vspace{5pt}
+            \hspace{2pt}
+            \beamer@currentsubsection=0
+            \insertverticalnavigation{\the\sidebarHeight}
+            \vfill
+        }
+    }
+}
+
+% Custom Footer
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \begin{beamercolorbox}[wd=\sidebarwidth,ht=1ex,dp=2.5ex,center]{}
+    \insertframenumber
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=\mainfooterwidth,ht=1ex,dp=2.5ex,center]{}%
+    \usebeamerfont{title in head/foot}\insertshorttitle \quad | \quad
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \vskip0pt%
+}
+
+\ProcessOptionsBeamer
+
+\setbeamertemplate{navigation symbols}{}
+\mode<all>
