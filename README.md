@@ -7,6 +7,6 @@ This repository contains a Beamer template for the Indian Institute of Technolog
 ## Features
 
 - **Customizable Slide Layouts**: Easily modify the look and feel of your presentations to suit your style.
-- **Sidebar Navigation**: Utilize sidebars for easy navigation through sections and subsections.
-- **Institutional Branding**: Incorporate the IIST logo and colors for official presentations.
+- **Sidebar Navigation**: Utilise sidebars for easy navigation through sections and subsections.
+- **Institutional Branding**: Incorporate the IIJ logo and colours for official presentations.
 - **Dynamic Footer**: Includes page numbers, presentation title, and author details.
